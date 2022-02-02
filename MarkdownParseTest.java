@@ -14,11 +14,10 @@ public class MarkdownParseTest {
 
     @Test
     public void testFile1() throws IOException {
-        String contents= Files.readString(Path.of("./test-file.md"));
+        String contents= Files.readString(Path.of("C:/Users/skyle/Documents/GitHub/markdown-parse/test-file.md"));
         List<String> expect = List.of("https://something.com", "some-page.html");
         assertEquals(MarkdownParse.getLinks(contents), expect);
-    }
-    
+    }  
 }
 //javac -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" MarkdownParseTest.java
 //java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar;org.junit.runner.JUnitCore" MarkdownParse
