@@ -16,13 +16,13 @@ public class MarkdownParse {
             int nextCloseBracket = markdown.indexOf("]", nextOpenBracket);
             int openParen = markdown.indexOf("(", nextCloseBracket);
             int closeParen = markdown.indexOf(")", openParen);  //-1
-            if (markdown.substring(openParen+1, closeParen).contains(".") && !markdown.substring(openParen+1, closeParen).contains(" ")) {
+            //if (markdown.substring(openParen+1, closeParen).contains(".") && !markdown.substring(openParen+1, closeParen).contains(" ")) {
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
-            }
+            //}
             if (!markdown.substring(closeParen+1,markdown.length()).contains(")") ) {
                 failsafe = true;
             }
-            System.out.println("I am looping :)");
+            //System.out.println("I am looping :)");
             currentIndex = closeParen + 1; // 0
         }
         return toReturn;
