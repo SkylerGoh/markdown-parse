@@ -18,6 +18,11 @@ public class MarkdownParseTest {
         List<String> expect = List.of("https://something.com", "some-page.html");
         assertEquals(MarkdownParse.getLinks(contents), expect);
     }  
+    @Test
+    public void testFile2() throws IOException {
+        String contents = Files.readString(Path.of("test-file9.md"));
+        assertEquals(MarkdownParse.getLinks(contents),"");
+    }
 }
 //javac -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" MarkdownParseTest.java
 //java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar;org.junit.runner.JUnitCore" MarkdownParse
