@@ -21,7 +21,8 @@ public class MarkdownParseTest {
     @Test
     public void testFile2() throws IOException {
         String contents = Files.readString(Path.of("test-file9.md"));
-        assertEquals(MarkdownParse.getLinks(contents),"");
+        List<String> expect = List.of();
+        assertEquals(MarkdownParse.getLinks(contents),expect);
     }
 }
 //javac -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" MarkdownParseTest.java
